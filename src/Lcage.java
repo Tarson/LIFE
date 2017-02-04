@@ -22,6 +22,6 @@ public class Lcage {
 
   }
 
-  // method to put CELL object to list array 
+  // method to put CELL object to list array
 
 }
