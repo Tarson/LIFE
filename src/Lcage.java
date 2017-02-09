@@ -72,9 +72,9 @@ public class Lcage {
 
       public static void tO_step(){
 
-        // checkimg for quantity of neighbors of the cell
 
-          for (Lcage cell:lcage_list){
+
+          for (Lcage cell:lcage_list){ // checkimg for quantity of neighbors of the cell
 
               int count =0;
               for(int i =0; i < lcage_list.size();i++){
@@ -98,21 +98,21 @@ public class Lcage {
 
           }
 
-            // checking ambiance for new birth
-
-            Lambience.tO_checking_birth();
 
 
+            Lambience.tO_checking_birth();// checking ambiance for new birth
 
 
-          // deleting of dead cell
-         for (int i = 0; i < lcage_list.size();i++){
+
+         for (int i = 0; i < lcage_list.size();i++){ // deleting of dead cell
 
               Lcage cell = lcage_list.get(i);
               if (cell.aLive==false) {
 
                   lcage_list.remove(cell);
+
                   cell.b.setBackground(Color.WHITE);
+
                   i--;
 
               }

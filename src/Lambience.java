@@ -21,7 +21,7 @@ public class Lambience {
     Lambience(int x,int y, int number_of_birth){
         this.x = x;
         this.y = y;
-       this.number_of_birth = 1;
+       this.number_of_birth = 0;
 
 
 
@@ -33,21 +33,21 @@ public class Lambience {
 
     public  static void tO_create_ambience(int x, int y){
 
-        tO_delete_doubles_ambiance(x-1,y+1);
+        tO_delete_doubles_ambiance((x-1),(y+1));
 
-        tO_delete_doubles_ambiance(x,y+1);
+        tO_delete_doubles_ambiance(x,(y+1));
 
-        tO_delete_doubles_ambiance(x+1,y+1);
+        tO_delete_doubles_ambiance((x+1),(y+1));
 
-        tO_delete_doubles_ambiance(x-1,y);
+        tO_delete_doubles_ambiance((x-1),y);
 
-        tO_delete_doubles_ambiance(x+1,y);
+        tO_delete_doubles_ambiance((x+1),y);
 
-        tO_delete_doubles_ambiance(x-1,y-1);
+        tO_delete_doubles_ambiance((x-1),(y-1));
 
-        tO_delete_doubles_ambiance(x,y-1);
+        tO_delete_doubles_ambiance(x,(y-1));
 
-        tO_delete_doubles_ambiance(x+1,y-1);
+        tO_delete_doubles_ambiance((x+1),(y-1));
 
 
 
@@ -58,21 +58,34 @@ public class Lambience {
     public static   void  tO_delete_doubles_ambiance(int xx, int yy){
 
 
-        if(lambiance.isEmpty()== true) {
-            Lambience lamb = new Lambience(xx, yy, 0);
+     /*  if(lambiance.isEmpty()== true) {
+           Lambience lamb = new Lambience(xx, yy, 0);
 
             lambiance.add(lamb);
-        }
+            return;
+        }*/
 
         for (Lambience lamb:lambiance)
         {
             if(xx == lamb.x & yy == lamb.y){
+
                 return;
             }
 
         }
 
-        Lambience lamb = new Lambience(xx, yy, 0);
+        for (Lcage cell :Lcage.lcage_list) {
+
+         if (xx == cell.x & yy ==cell.y)
+                {
+                   return;
+                }
+
+
+            }
+
+
+     Lambience lamb = new Lambience(xx, yy, 0);
 
         lambiance.add(lamb);
 
@@ -91,6 +104,7 @@ public class Lambience {
 
 
                 Lcage cell = Lcage.lcage_list.get(i);
+
                 if (Math.abs(cell.x-lamb.x)==1 & Math.abs(cell.y-lamb.y)<2 | Math.abs(cell.y-lamb.y)==1  & Math.abs(cell.x-lamb.x)<2)
                 {
                     lamb.number_of_birth++;
@@ -108,9 +122,13 @@ public class Lambience {
 
 
                 int number_of_button = (lamb.x-1)*100+(lamb.y-1);
+
                 JButton b = GamePanel.buttons_list.get(number_of_button);
+
                 b.setBackground(Color.RED);
+
                 Lcage cell = new Lcage(b,lamb.x,lamb.y);
+
                 Lcage.lcage_list.add(cell);
             }
 

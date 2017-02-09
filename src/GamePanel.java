@@ -12,6 +12,7 @@ public class GamePanel extends JFrame{
 
     public static ArrayList<JButton> buttons_list = new ArrayList<>();
 
+    // Control buttons
     static JButton sTart = new JButton("START");
     static JButton nEw = new JButton("NEW");
     static JButton sLide_Mode = new JButton("SLIDE MODE");
@@ -24,8 +25,9 @@ public class GamePanel extends JFrame{
 
 
    GamePanel(){
+
        super("GAME LIFE");
-     //  setLayout(new FlowLayout());
+       //  setLayout(new FlowLayout());
        setSize(840,900);
 
        JPanel panel_cage =new JPanel();// creation of left panel with game field 100 x 100
@@ -47,13 +49,17 @@ public class GamePanel extends JFrame{
 
         sTop.setEnabled(false);
 
-       for(int i=1;i<101;i++){
+       for(int i=1;i<101;i++){// creation of the game field from the small buttons 10 000 pcs
             for(int k=1;k<101;k++) {
 
                 b = new JButton();
+
                 b.setEnabled(false);
+
                 panel_cage.add(b);
+
                 b.addActionListener(new Button_Handler(b,i,k));
+
                buttons_list.add(b);
             }
        }
@@ -80,6 +86,7 @@ public class GamePanel extends JFrame{
        panel_buttons.add (sTop);
 
         // Action listeners for control buttons
+
         sTart.addActionListener(new Button_Handler(sTart));
 
         nEw.addActionListener(new Button_Handler(nEw));
@@ -113,6 +120,7 @@ public class GamePanel extends JFrame{
 
 
        setVisible(true);
+
        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 }

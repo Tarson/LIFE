@@ -15,15 +15,18 @@ public class Button_Handler implements ActionListener {
     int k;
 
 
-
+    // buttons handler constructor for game field
     Button_Handler(JButton b,int i , int k){
+
        this.b=b;// pressed button
        this.i=i;//  X coordinate
        this.k=k;//  Y coordinate
 
     }
 
+    // buttons handler constructor for control buttons
     Button_Handler(JButton b){
+
       this.b = b;
 
     }
@@ -37,7 +40,7 @@ public class Button_Handler implements ActionListener {
     public void actionPerformed(ActionEvent actionEvent) {
 
 
-        // processing of COMMAND BUTTONS
+        // processing of CONTROL BUTTONS
 
         if (b.getText().equals("START")){
             System.out.println(b.getText());
@@ -63,52 +66,52 @@ public class Button_Handler implements ActionListener {
 
                 GamePanel.sTep_Forvard.setEnabled(true);
 
-
-
-            return;
+             return;
         }
 
         if (b.getText().equals("NEW")){
+
             System.out.println(b.getText());
 
             if(Lcage.lcage_list.isEmpty()!=true){ // clearance of list of cells
+
             Lcage.lcage_list.clear();}
 
                 for (JButton b:GamePanel.buttons_list){
+
                     b.setBackground(Color.white);
+
                     b.setEnabled(true);
                 }
 
                  GamePanel.sTart.setEnabled(true);
+
                  GamePanel.sPeed_Down.setEnabled(false);
+
                  GamePanel.sTop.setEnabled(false);
+
                  GamePanel.sPeed_Up.setEnabled(false);
+
                  GamePanel.sLide_Mode.setEnabled(false);
+
                  GamePanel.sTep_Forvard.setEnabled(false);
 
-
-
-
-
-
-                return;
+                 return;
         }
 
         if (b.getText().equals("SLIDE MODE")){
 
-            System.out.println(b.getText());
+         //   System.out.println(b.getText());
 
             return;
         }
 
         if (b.getText().equals("STEP")){
 
-            Lcage.pRint_set_of_objects();
-            System.out.println(b.getText());
+         //   Lcage.pRint_set_of_objects();
+         //   System.out.println(b.getText());
 
             Lcage.tO_step(); // making one step of life
-
-
 
             return;
         }
@@ -117,21 +120,21 @@ public class Button_Handler implements ActionListener {
 
         if (b.getText().equals("SPEED >")){
 
-            System.out.println(b.getText());
+      //      System.out.println(b.getText());
 
             return;
         }
 
         if (b.getText().equals("SPEED <")){
 
-            System.out.println(b.getText());
+      //      System.out.println(b.getText());
 
             return;
         }
 
         if (b.getText().equals("STOP")){
 
-            System.out.println(b.getText());
+      //      System.out.println(b.getText());
 
             return;
         }
@@ -143,6 +146,7 @@ public class Button_Handler implements ActionListener {
 
 
        if(b.getBackground().equals(Color.RED)) {
+
            b.setBackground(Color.WHITE);
 
            Lcage.dElete_Cell(i,k);// deleting object Lcage
