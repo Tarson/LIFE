@@ -21,6 +21,8 @@ public class GamePanel extends JFrame{
     static JButton sPeed_Down = new JButton("SPEED <");
     static JButton sTop = new JButton("STOP");
 
+    static JTextField Speed = new JTextField("   1",5);
+
 
 
 
@@ -83,7 +85,13 @@ public class GamePanel extends JFrame{
 
        panel_buttons.add (sPeed_Down);
 
+       panel_buttons.add (Speed);
+
+       Speed.setBorder(new LineBorder(Color.BLACK,1));
+
        panel_buttons.add (sTop);
+
+
 
         // Action listeners for control buttons
 

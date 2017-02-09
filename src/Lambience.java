@@ -58,12 +58,7 @@ public class Lambience {
     public static   void  tO_delete_doubles_ambiance(int xx, int yy){
 
 
-     /*  if(lambiance.isEmpty()== true) {
-           Lambience lamb = new Lambience(xx, yy, 0);
 
-            lambiance.add(lamb);
-            return;
-        }*/
 
         for (Lambience lamb:lambiance)
         {
@@ -117,11 +112,12 @@ public class Lambience {
 
         for (Lambience lamb:lambiance) {
 
-            if(lamb.number_of_birth==3)
+            if(lamb.number_of_birth==3 & lamb.x <150 & lamb.x >-50 & lamb.y <150 & lamb.y >-50)
             {
 
 
-                int number_of_button = (lamb.x-1)*100+(lamb.y-1);
+               if(lamb.x <101 & lamb.x > 0  & lamb.y <101 & lamb.y >0 )
+               {  int number_of_button = (lamb.x-1)*100+(lamb.y-1);
 
                 JButton b = GamePanel.buttons_list.get(number_of_button);
 
@@ -130,6 +126,13 @@ public class Lambience {
                 Lcage cell = new Lcage(b,lamb.x,lamb.y);
 
                 Lcage.lcage_list.add(cell);
+
+               continue;
+
+               }
+
+                Lcage.lcage_list.add(new Lcage(lamb.x, lamb.y));
+
             }
 
 

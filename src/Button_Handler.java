@@ -2,8 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Time;
 import  java.util.*;
 
+//import javax.swing.Timer;
 /**
  * Created by m on 03.02.2017.
  */
@@ -13,6 +15,9 @@ public class Button_Handler implements ActionListener {
     JButton b;
     int i;
     int k;
+    static int speed_ofScrolling=1;
+    static  String textScrolling = "     1";
+    static boolean slide_mode = false;
 
 
     // buttons handler constructor for game field
@@ -30,7 +35,6 @@ public class Button_Handler implements ActionListener {
       this.b = b;
 
     }
-
 
 
 
@@ -101,15 +105,54 @@ public class Button_Handler implements ActionListener {
 
         if (b.getText().equals("SLIDE MODE")){
 
-         //   System.out.println(b.getText());
+
+
+            GamePanel.sTart.setEnabled(false);
+
+            GamePanel.sPeed_Down.setEnabled(true);
+
+            GamePanel.sTop.setEnabled(true);
+
+            GamePanel.sPeed_Up.setEnabled(true);
+
+            GamePanel.sTep_Forvard.setEnabled(false);
+
+            GamePanel.nEw.setEnabled(false);
+
+            GamePanel.sLide_Mode.setEnabled(false);
+
+            slide_mode = true;
+
+            class SLideThread extends Thread {
+                        public void run() {
+
+                            while (slide_mode)
+                            {Lcage.tO_step();
+
+                            try {Thread.sleep(1000/speed_ofScrolling);}
+                            catch (InterruptedException e)
+                            {}
+
+                            }
+                        }
+                    }
+
+
+            Thread slide = new SLideThread();
+            slide.start();
 
             return;
-        }
+      //  }
+    }
+
 
         if (b.getText().equals("STEP")){
 
+            slide_mode = false;
          //   Lcage.pRint_set_of_objects();
-         //   System.out.println(b.getText());
+
+            GamePanel.sTart.setEnabled(false);
+            GamePanel.sLide_Mode.setEnabled(true);
 
             Lcage.tO_step(); // making one step of life
 
@@ -120,21 +163,35 @@ public class Button_Handler implements ActionListener {
 
         if (b.getText().equals("SPEED >")){
 
-      //      System.out.println(b.getText());
+            speed_ofScrolling++;
+            if(speed_ofScrolling>10){
+                speed_ofScrolling=10;
+            }
+            String s = "   ";
+            textScrolling = s+String.valueOf(speed_ofScrolling);
+            GamePanel.Speed.setText(textScrolling);
 
             return;
         }
 
         if (b.getText().equals("SPEED <")){
 
-      //      System.out.println(b.getText());
+            speed_ofScrolling--;
+            if(speed_ofScrolling<1){
+                speed_ofScrolling=1;
+            }
+            String s = "   ";
+            textScrolling = s+String.valueOf(speed_ofScrolling);
+            GamePanel.Speed.setText(textScrolling);
 
             return;
         }
 
         if (b.getText().equals("STOP")){
 
-      //      System.out.println(b.getText());
+          slide_mode = false;
+            GamePanel.sTep_Forvard.setEnabled(true);
+            GamePanel.nEw.setEnabled(true);
 
             return;
         }
