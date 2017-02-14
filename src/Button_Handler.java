@@ -47,7 +47,7 @@ public class Button_Handler implements ActionListener {
         // processing of CONTROL BUTTONS
 
         if (b.getText().equals("START")){
-            System.out.println(b.getText());
+
 
 
             if(Lcage.lcage_list.isEmpty()==true){
@@ -75,7 +75,7 @@ public class Button_Handler implements ActionListener {
 
         if (b.getText().equals("NEW")){
 
-            System.out.println(b.getText());
+
 
             if(Lcage.lcage_list.isEmpty()!=true){ // clearance of list of cells
 
@@ -164,8 +164,8 @@ public class Button_Handler implements ActionListener {
         if (b.getText().equals("SPEED >")){
 
             speed_ofScrolling++;
-            if(speed_ofScrolling>10){
-                speed_ofScrolling=10;
+            if(speed_ofScrolling>20){
+                speed_ofScrolling=20;
             }
             String s = "   ";
             textScrolling = s+String.valueOf(speed_ofScrolling);
@@ -202,7 +202,7 @@ public class Button_Handler implements ActionListener {
 
 
 
-       if(b.getBackground().equals(Color.RED)) {
+       if(b.getBackground().equals(Color.BLUE)) {
 
            b.setBackground(Color.WHITE);
 
@@ -210,7 +210,7 @@ public class Button_Handler implements ActionListener {
            return;
             }
 
-             b.setBackground(Color.RED);
+             b.setBackground(Color.BLUE);
 
              Lcage lcage = new Lcage(b,i,k);
 

@@ -7,7 +7,7 @@ public class Life {
 
 
 
-        System.out.println("Hello Misha");
+    //    System.out.println("Hello Misha");
 
 
         GamePanel lIfePanel = new GamePanel();

@@ -32,7 +32,7 @@ public class GamePanel extends JFrame{
        //  setLayout(new FlowLayout());
        setSize(840,900);
 
-       JPanel panel_cage =new JPanel();// creation of left panel with game field 100 x 100
+       JPanel panel_cage = new JPanel();// creation of left panel with game field 100 x 100
 
         panel_cage.setLayout(new GridLayout(100,100));
         JButton b;
@@ -114,9 +114,9 @@ public class GamePanel extends JFrame{
 
        width1.add(Box.createVerticalStrut(15));
 
-       width1.add(Box.createHorizontalStrut(5));
+      width1.add(Box.createHorizontalStrut(5));
 
-        panel_buttons.add(width1);
+       panel_buttons.add(width1);
 
        add ((panel_buttons),BorderLayout.NORTH);
 

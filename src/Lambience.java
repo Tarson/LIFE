@@ -2,6 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Random;
+
+import static java.awt.Color.BLUE;
+import static java.awt.Color.RED;
 
 /**
  * Created by m on 07.02.2017.
@@ -17,6 +21,7 @@ public class Lambience {
     int y;
     int number_of_birth;  // 3 = birth
     static ArrayList <Lambience> lambiance = new ArrayList<>();
+    public static Color [] col = new Color [] { RED,BLUE,Color.green,Color.YELLOW, Color.BLACK, Color.MAGENTA, Color.ORANGE,Color.CYAN   };
 
     Lambience(int x,int y, int number_of_birth){
         this.x = x;
@@ -110,6 +115,7 @@ public class Lambience {
 
         }
 
+            Random random = new Random();
         for (Lambience lamb:lambiance) {
 
             if(lamb.number_of_birth==3 & lamb.x <150 & lamb.x >-50 & lamb.y <150 & lamb.y >-50)
@@ -121,7 +127,9 @@ public class Lambience {
 
                 JButton b = GamePanel.buttons_list.get(number_of_button);
 
-                b.setBackground(Color.RED);
+
+                b.setBackground(col[random.nextInt(8)]);
+
 
                 Lcage cell = new Lcage(b,lamb.x,lamb.y);
 
@@ -130,8 +138,8 @@ public class Lambience {
                continue;
 
                }
-
-                Lcage.lcage_list.add(new Lcage(lamb.x, lamb.y));
+            else
+               { Lcage.lcage_list.add(new Lcage(lamb.x, lamb.y));}
 
             }
 
