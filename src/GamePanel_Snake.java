@@ -22,7 +22,7 @@ public class GamePanel_Snake extends  JFrame   {
     GamePanel_Snake() {
 
         super("SNAKE");
-        //  setLayout(new FlowLayout());
+
         setSize(500, 580);
 
 

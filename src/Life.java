@@ -15,10 +15,9 @@ public class Life  {
 
 
      //  GamePanel lIfePanel = new GamePanel();
-        GamePanel_Snake snakePanel = new GamePanel_Snake();
+      //  GamePanel_Snake snakePanel = new GamePanel_Snake();
 
-
-
+        Glass_GamePanel glass = new Glass_GamePanel();
 
 
 
