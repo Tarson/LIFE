@@ -7,8 +7,8 @@ import java.util.Random;
  */
 public class Tetramino {
 
-    static int y1, y2, y3, y4;
-    static int x1, x2, x3, x4;
+   static  int y1, y2, y3, y4;
+   static int x1, x2, x3, x4;
 
     JButton b;
 

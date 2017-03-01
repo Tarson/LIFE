@@ -1,6 +1,10 @@
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 /**
@@ -9,7 +13,7 @@ import java.util.ArrayList;
 public class Glass_GamePanel extends JFrame {
 
 
-
+    static int direction;
 
 
         public static ArrayList<JButton> buttons_list_tetris = new ArrayList<>();
@@ -76,6 +80,51 @@ public class Glass_GamePanel extends JFrame {
 
             this.setFocusable(true);
 
+
+
+            this.addKeyListener(new KeyListener() {
+
+
+
+                public void keyTyped(KeyEvent keyEvent) {
+
+
+                }
+
+
+                @Override
+                public void keyPressed(KeyEvent keyEvent) {
+
+                    // not to perform snake to go back in any direction
+
+
+                        direction =keyEvent.getKeyCode();
+
+
+
+
+
+
+
+
+
+                    }
+
+
+
+
+                @Override
+                public void keyReleased(KeyEvent keyEvent) {  }
+            });
+
+            // for returning focus to keys
+            this.addFocusListener(new FocusAdapter() {
+                @Override
+                public void focusLost(FocusEvent focusEvent) {
+                    super.focusLost(focusEvent);
+                    requestFocus();
+                }
+            });
 
 
 
