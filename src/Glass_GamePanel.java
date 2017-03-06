@@ -12,8 +12,9 @@ import java.util.ArrayList;
  */
 public class Glass_GamePanel extends JFrame {
 
-
-    static int direction;
+    static JTextField Score = new JTextField("   ",5);
+    static int direction=0;
+    JLabel label = new JLabel("SCORE");
 
 
         public static ArrayList<JButton> buttons_list_tetris = new ArrayList<>();
@@ -56,7 +57,13 @@ public class Glass_GamePanel extends JFrame {
             // control buttons
 
 
+
             panel_buttons.add (nnew);
+            panel_buttons.add (label);
+
+            panel_buttons.add (Score);
+
+
 
             nnew.addActionListener(new Tetramino_BattonHandler(nnew));
 
@@ -101,11 +108,7 @@ public class Glass_GamePanel extends JFrame {
                         direction =keyEvent.getKeyCode();
 
 
-
-
-
-
-
+                        if (direction==37|direction==39|direction==38){Glass.delay=300;}
 
 
                     }
@@ -114,7 +117,12 @@ public class Glass_GamePanel extends JFrame {
 
 
                 @Override
-                public void keyReleased(KeyEvent keyEvent) {  }
+                public void keyReleased(KeyEvent keyEvent) {
+
+
+                    if (direction==37|direction==39|direction==38){Glass.delay=500;}
+
+                }
             });
 
             // for returning focus to keys

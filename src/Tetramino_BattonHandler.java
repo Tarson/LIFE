@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -33,6 +34,19 @@ public class Tetramino_BattonHandler implements ActionListener {
 
 
             if (b.getText().equals("NEW")) {
+
+                for (JButton b:Glass_GamePanel.buttons_list_tetris ) {
+
+                    b.setBackground(Color.WHITE);
+
+                }
+
+                Tetramino_segments.tetramino_segments.clear();
+                Glass.end_0f_game=false;
+
+
+
+
 
                 Glass stacan = new Glass();
 

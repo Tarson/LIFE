@@ -102,10 +102,6 @@ public class Tetramino {
 
         }
 
-        y1 = 1; x1 = 4;
-        y2 = 1; x2 = 5;       //XXXX
-        y3 = 1; x3 = 6;
-        y4 = 1; x4 = 7;
 
 
             ImageDrawing();
@@ -117,29 +113,37 @@ public class Tetramino {
         static void ImageClearing(){
 
             JButton b;
-            b = Glass_GamePanel.buttons_list_tetris.get((y3 - 1) * 10 + (x3 - 1));
-            b.setBackground(Color.WHITE);
+
+            if(y3>=1) {
+                b = Glass_GamePanel.buttons_list_tetris.get((y3 - 1) * 10 + (x3 - 1));
+            b.setBackground(Color.WHITE);}
+            if(y4>=1){
             b = Glass_GamePanel.buttons_list_tetris.get((y4 - 1) * 10 + (x4 - 1));
-            b.setBackground(Color.WHITE);
+            b.setBackground(Color.WHITE);}
+            if(y1>=1){
             b = Glass_GamePanel.buttons_list_tetris.get((y1 - 1) * 10 + (x1 - 1));
-            b.setBackground(Color.WHITE);
+            b.setBackground(Color.WHITE);}
+            if(y2>=1){
             b = Glass_GamePanel.buttons_list_tetris.get((y2 - 1) * 10 + (x2 - 1));
-            b.setBackground(Color.WHITE);
+            b.setBackground(Color.WHITE);}
 
         }
 
     static void ImageDrawing(){
 
         JButton b;
-
+        if(y1>=1){
         b = Glass_GamePanel.buttons_list_tetris.get((y1-1)*10+(x1-1));
-        b.setBackground(Color.RED);
+        b.setBackground(Color.RED);}
+        if(y2>=1){
         b = Glass_GamePanel.buttons_list_tetris.get((y2-1)*10+(x2-1));
-        b.setBackground(Color.RED);
+        b.setBackground(Color.RED);}
+        if(y3>=1) {
         b = Glass_GamePanel.buttons_list_tetris.get((y3-1)*10+(x3-1));
-        b.setBackground(Color.RED);
+        b.setBackground(Color.RED);}
+        if(y4>=1){
         b = Glass_GamePanel.buttons_list_tetris.get((y4-1)*10+(x4-1));
-        b.setBackground(Color.RED);
+        b.setBackground(Color.RED);}
 
 
 
