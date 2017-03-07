@@ -107,7 +107,7 @@ public class Glass_GamePanel extends JFrame {
 
                         direction =keyEvent.getKeyCode();
 
-
+                        if(direction==40){Glass.delay=80;}
                         if (direction==37|direction==39|direction==38){Glass.delay=300;}
 
 
@@ -120,7 +120,8 @@ public class Glass_GamePanel extends JFrame {
                 public void keyReleased(KeyEvent keyEvent) {
 
 
-                    if (direction==37|direction==39|direction==38){Glass.delay=500;}
+                    if (direction==37|direction==39|direction==38|direction==40|direction==0){Glass.delay=500;}
+
 
                 }
             });
@@ -140,7 +141,7 @@ public class Glass_GamePanel extends JFrame {
 
 
 
-
+           setLocationRelativeTo(null);
 
         setVisible(true);
 

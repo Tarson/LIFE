@@ -12,14 +12,16 @@ public class Tetramino_segments {
 
     int y;
     int x;
+    Color c;
 
     static ArrayList <Tetramino_segments>  tetramino_segments = new ArrayList<>();
     static  int score = 0;
 
-    Tetramino_segments(int y, int x){
+    Tetramino_segments(int y, int x,Color c){
 
         this.y =y;
         this.x=x;
+        this.c =  c;
 
     }
 
@@ -46,7 +48,7 @@ public class Tetramino_segments {
         }
 
 
-        System.out.println(count);
+       // System.out.println(count);
         if (count>0){b=true;}else {b=false;}
 
         return b;}
@@ -130,7 +132,7 @@ public class Tetramino_segments {
 
 
                     b = Glass_GamePanel.buttons_list_tetris.get((segment.y-1)*10+(segment.x-1));
-                    b.setBackground(Color.RED);
+                    b.setBackground(segment.c);
 
 
 

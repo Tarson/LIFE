@@ -14,6 +14,7 @@ public class Rabbits {
     int y;
     JButton b;
     boolean bool;
+    static int Score=0;
     public static ArrayList<Rabbits> rabbit_list = new ArrayList();
 
 
@@ -85,7 +86,8 @@ public class Rabbits {
             {
 
                Rabbits rabbit = new Rabbits();
-
+                Score ++;
+                GamePanel_Snake.Score.setText("          "+Score);
 
             }
 

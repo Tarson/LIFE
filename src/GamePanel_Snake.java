@@ -12,11 +12,11 @@ public class GamePanel_Snake extends  JFrame   {
 
 
     public static ArrayList<JButton> buttons_list_snake = new ArrayList<>();
-
+    static JTextField Score = new JTextField(" ",5);
     static JButton neww = new JButton("NEW");
     static int direction = 39;
     static int previous_direction=39;
-
+    JLabel label = new JLabel("SCORE");
 
 
     GamePanel_Snake() {
@@ -59,6 +59,8 @@ public class GamePanel_Snake extends  JFrame   {
 
 
         panel_buttons.add (neww);
+        panel_buttons.add(label);
+        panel_buttons.add(Score);
 
         neww.addActionListener(new Button_Handler_Snake(neww));
 
@@ -169,7 +171,7 @@ public class GamePanel_Snake extends  JFrame   {
         });
 
 
-
+        setLocationRelativeTo(null);
         setVisible(true);
 
        setDefaultCloseOperation(EXIT_ON_CLOSE);

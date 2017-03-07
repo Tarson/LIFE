@@ -52,6 +52,36 @@ Glass(){
 
 
                       //  System.out.println(Glass_GamePanel.direction);
+                        Tetramino.ImageClearing();
+
+                        if(delay==300){small_delay++;}
+                        if (small_delay>2)
+                        {   Tetramino.y1 = Tetramino.y1 + 1;
+                            Tetramino.y2 = Tetramino.y2 + 1;
+                            Tetramino.y3 = Tetramino.y3 + 1;
+                            Tetramino.y4 = Tetramino.y4 + 1;
+                            small_delay=0;
+                        }
+                        if (delay==500| delay==80){
+                            Tetramino.y1 = Tetramino.y1 + 1;
+                            Tetramino.y2 = Tetramino.y2 + 1;
+                            Tetramino.y3 = Tetramino.y3 + 1;
+                            Tetramino.y4 = Tetramino.y4 + 1;
+                        }
+
+
+                        Tetramino.ImageDrawing();
+
+
+
+
+
+
+
+
+
+
+
 
 
                         switch (Glass_GamePanel.direction) {
@@ -213,19 +243,12 @@ Glass(){
                                     Tetramino.x3 =  tetramint_coord [7];
                                 }
 
-                                Tetramino.ImageDrawing();
 
 
 
 
 
-                            //    delay = 500;
-                                break;
-                            case 40:// fall
 
-                                delay = 50;
-
-                                break;
 
 
                         }
@@ -234,25 +257,11 @@ Glass(){
                         Glass_GamePanel.direction = 0;
 
 
-                        Tetramino.ImageClearing();
 
 
 
 
-                         if(delay==300){small_delay++;}
-                         if (small_delay>2)
-                        {   Tetramino.y1 = Tetramino.y1 + 1;
-                            Tetramino.y2 = Tetramino.y2 + 1;
-                            Tetramino.y3 = Tetramino.y3 + 1;
-                            Tetramino.y4 = Tetramino.y4 + 1;
-                            small_delay=0;
-                        }
-                        if (delay==500| delay==50){
-                            Tetramino.y1 = Tetramino.y1 + 1;
-                            Tetramino.y2 = Tetramino.y2 + 1;
-                            Tetramino.y3 = Tetramino.y3 + 1;
-                            Tetramino.y4 = Tetramino.y4 + 1;
-                        }
+
 
 
 
@@ -290,13 +299,13 @@ Glass(){
                         if (element_stopped == true) {
 
 
-                            Tetramino_segments segment1 = new Tetramino_segments(Tetramino.y1, Tetramino.x1);
+                            Tetramino_segments segment1 = new Tetramino_segments(Tetramino.y1, Tetramino.x1,Tetramino.c);
                             Tetramino_segments.tetramino_segments.add(segment1);
-                            Tetramino_segments segment2 = new Tetramino_segments(Tetramino.y2, Tetramino.x2);
+                            Tetramino_segments segment2 = new Tetramino_segments(Tetramino.y2, Tetramino.x2,Tetramino.c);
                             Tetramino_segments.tetramino_segments.add(segment2);
-                            Tetramino_segments segment3 = new Tetramino_segments(Tetramino.y3, Tetramino.x3);
+                            Tetramino_segments segment3 = new Tetramino_segments(Tetramino.y3, Tetramino.x3,Tetramino.c);
                             Tetramino_segments.tetramino_segments.add(segment3);
-                            Tetramino_segments segment4 = new Tetramino_segments(Tetramino.y4, Tetramino.x4);
+                            Tetramino_segments segment4 = new Tetramino_segments(Tetramino.y4, Tetramino.x4,Tetramino.c);
                             Tetramino_segments.tetramino_segments.add(segment4);
 
                             if((Tetramino.y1 | Tetramino.y2 | Tetramino.y3 | Tetramino.y4)==3){end_0f_game=true;}

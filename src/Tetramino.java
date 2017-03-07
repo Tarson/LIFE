@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
+import static java.awt.Color.BLUE;
+import static java.awt.Color.RED;
+
 /**
  * Created by m on 27.02.2017.
  */
@@ -10,6 +13,8 @@ public class Tetramino {
    static  int y1, y2, y3, y4;
    static int x1, x2, x3, x4;
 
+    public static Color [] col = new Color [] { RED,BLUE,Color.green, Color.BLACK, Color.MAGENTA, Color.ORANGE,Color.CYAN   };
+   static Color c;
     JButton b;
 
 
@@ -20,6 +25,7 @@ public class Tetramino {
 
 
 
+        c = col[random.nextInt(6)+1];
         int i = random.nextInt(10)+1;
 
         switch (i){
@@ -134,16 +140,16 @@ public class Tetramino {
         JButton b;
         if(y1>=1){
         b = Glass_GamePanel.buttons_list_tetris.get((y1-1)*10+(x1-1));
-        b.setBackground(Color.RED);}
+        b.setBackground(c);}
         if(y2>=1){
         b = Glass_GamePanel.buttons_list_tetris.get((y2-1)*10+(x2-1));
-        b.setBackground(Color.RED);}
+        b.setBackground(c);}
         if(y3>=1) {
         b = Glass_GamePanel.buttons_list_tetris.get((y3-1)*10+(x3-1));
-        b.setBackground(Color.RED);}
+        b.setBackground(c);}
         if(y4>=1){
         b = Glass_GamePanel.buttons_list_tetris.get((y4-1)*10+(x4-1));
-        b.setBackground(Color.RED);}
+        b.setBackground(c);}
 
 
 
