@@ -139,7 +139,7 @@ public class Lambience {
 
                }
             else
-               { Lcage.lcage_list.add(new Lcage(lamb.x, lamb.y));}
+               { Lcage.lcage_list.add(new Lcage(lamb.x, lamb.y));} // if coordinates of the cell exceeds button panel
 
             }
 

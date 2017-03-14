@@ -9,8 +9,8 @@ import java.util.ArrayList;
  */
 public class GamePanel_Snake extends  JFrame   {
 
-
-
+    static GamePanel_Snake g;
+    static boolean focus  = true;
     public static ArrayList<JButton> buttons_list_snake = new ArrayList<>();
     static JTextField Score = new JTextField(" ",5);
     static JButton neww = new JButton("NEW");
@@ -21,12 +21,14 @@ public class GamePanel_Snake extends  JFrame   {
 
     GamePanel_Snake() {
 
-        super("SNAKE");
 
+
+        super("SNAKE");
+        g =this;
         setSize(500, 580);
 
 
-        JPanel panel_cage_snake = new JPanel();// creation of left panel with game field 15 x 15
+        JPanel panel_cage_snake = new JPanel();// creation of left panel with game field 20 x 20
 
         panel_cage_snake.setLayout(new GridLayout(20, 20));
         JButton b;
@@ -82,9 +84,9 @@ public class GamePanel_Snake extends  JFrame   {
 
         panel_buttons.setBorder(new LineBorder(Color.BLACK,2));
 
-        this.setFocusable(true);
+        setFocusable(true);
 
-        this.addKeyListener(new KeyListener() {
+        addKeyListener(new KeyListener() {
 
 
 
@@ -162,22 +164,37 @@ public class GamePanel_Snake extends  JFrame   {
         });
 
         // for returning focus to keys
-        this.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusLost(FocusEvent focusEvent) {
-                super.focusLost(focusEvent);
-                requestFocus();
-            }
-        });
+    //    addFocusListener(new FocusAdapter() {
+    //        @Override
+    //        public void focusLost(FocusEvent focusEvent) {
+      //          super.focusLost(focusEvent);
+     //          if (focus){requestFocus();setFocusable(true);}
+    //
+     //       }
+    //    });
 
 
         setLocationRelativeTo(null);
         setVisible(true);
 
        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+
+
     }
 
 
+
+    static void setVis (Boolean b){
+
+        if(b){g.setVisible(true);}
+        else{g.setVisible(false);}
+    }
+    static void reqFocus(Boolean b){
+
+        if(b){g.requestFocus(true);}
+        else{g.requestFocus(false);}
+    }
 
 
 

@@ -7,6 +7,8 @@ import java.awt.event.*;
  */
 public class Life extends  JFrame{
 
+
+
     Life(){
         super ("GAMES");
 
@@ -27,7 +29,7 @@ public class Life extends  JFrame{
         life.addActionListener(new Choice(life));
 
 
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(null);// to place window to the center of the screen
         setSize(300, 100);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -62,6 +64,7 @@ public class Life extends  JFrame{
                 if (b.getText().equals("\"ЖИЗНЬ\"")){
                     setVisible(false);
                     GamePanel lIfePanel = new GamePanel();
+
                 }
                 if (b.getText().equals("ЗМЕЙКА")){
 

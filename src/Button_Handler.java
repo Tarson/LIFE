@@ -199,6 +199,7 @@ public class Button_Handler implements ActionListener {
 
 
         // processing of GAME PANEL BUTTONS
+        // initiation of the game before start .   One press - cell is, another press to the same button = delete pf the cell
 
 
 

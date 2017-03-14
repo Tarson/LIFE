@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
 
 /**
  * Created by m on 15.02.2017.
@@ -31,7 +32,7 @@ public class Button_Handler_Snake implements ActionListener {
 
     // action performer for button NEW
 
-    public void actionPerformed(ActionEvent actionEvent) {
+    public void actionPerformed(ActionEvent actionEvent){
 
 
 
@@ -56,11 +57,11 @@ public class Button_Handler_Snake implements ActionListener {
                 GamePanel_Snake.neww.setEnabled(false);
                 GamePanel_Snake.previous_direction=39;
                 GamePanel_Snake.direction=39;
-
+                Rabbits.Score=0;
 
             }
 
-
+            GamePanel_Snake.Score.setText("          "+Rabbits.Score);
             GamePanel_Snake.neww.setEnabled(false);
 
 
@@ -75,16 +76,16 @@ public class Button_Handler_Snake implements ActionListener {
             // thread for snake moving
             class snakeMoveThread extends Thread{
 
-                public void run(){
+                public void run() {
                     while (!Snake.snake_dead){
 
                         try {Thread.sleep(500);}
                         catch (InterruptedException e)
                         {}
-
-
                         Snake_body.toMove();
+
                         Snake.toMove(GamePanel_Snake.direction);
+
 
 
 
@@ -98,6 +99,8 @@ public class Button_Handler_Snake implements ActionListener {
 
             snakemove.start();
 
+
+            GamePanel_Snake.g.reqFocus(true);
 
 
                         return;

@@ -74,14 +74,7 @@ public class Lcage {
     }
 
 
-    public static void pRint_set_of_objects() {
 
-        for (Lcage l : lcage_list) {
-
-            System.out.println(" " + l.x + " " + l.y + " " + l.aLive);
-        }
-
-    }
 
 
     // making one step of life
@@ -127,7 +120,7 @@ public class Lcage {
 
                     lcage_list.remove(cell);
 
-                    if(cell.b!=null)
+                    if(cell.b!=null)// when coordinates of the cell exceeds button panel
                     { cell.b.setBackground(Color.WHITE);}
 
                     i--;
