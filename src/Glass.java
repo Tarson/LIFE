@@ -3,6 +3,7 @@ import com.sun.xml.internal.ws.transport.http.server.ServerAdapterList;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.*;
 import java.util.*;
 /**
  * Created by m on 27.02.2017.
@@ -343,6 +344,38 @@ Glass(){
 
                 Glass_GamePanel.nnew.setEnabled(true);
 
+
+
+                   try(ObjectInputStream objIS = new ObjectInputStream(new FileInputStream("d://tetris.txt"))){
+                       Player player = (Player)objIS.readObject();
+
+                       if(player.score < Tetramino_segments.score){
+
+                           Panel_save panel_save = new Panel_save(player);
+
+
+                       }
+                   }
+                  catch (Exception e){
+
+                       System.out.println("хуюшки с открытием тетриса");
+                       System.out.println(e.toString());
+                       Player player = new Player("", 0);
+
+                       try(ObjectOutputStream objOS = new ObjectOutputStream((new FileOutputStream("d://tetris.txt")))){
+
+                           objOS.writeObject(player);
+
+                       }
+
+                       catch(IOException er){
+
+                           System.out.println("хуюшки с cериализацией");
+
+                       }
+
+
+                  }
 
 
 

@@ -12,6 +12,8 @@ import java.util.ArrayList;
  */
 public class Glass_GamePanel extends JFrame {
 
+
+    static Glass_GamePanel g;
     static JTextField Score = new JTextField("   ",5);
     static int direction=0;
     JLabel label = new JLabel("SCORE");
@@ -24,6 +26,7 @@ public class Glass_GamePanel extends JFrame {
         Glass_GamePanel() {
 
         super("TETRIS");
+        g=this;
 
         setSize(245, 580);
 
@@ -127,13 +130,13 @@ public class Glass_GamePanel extends JFrame {
             });
 
             // for returning focus to keys
-            this.addFocusListener(new FocusAdapter() {
-                @Override
-                public void focusLost(FocusEvent focusEvent) {
-                    super.focusLost(focusEvent);
-                    requestFocus();
-                }
-            });
+      //      this.addFocusListener(new FocusAdapter() {
+            //    @Override
+            //    public void focusLost(FocusEvent focusEvent) {
+            //        super.focusLost(focusEvent);
+            //        requestFocus();
+             //   }
+         //   });
 
 
 
@@ -150,6 +153,11 @@ public class Glass_GamePanel extends JFrame {
     }
 
 
+    static void reqFocus(Boolean b){
+
+        if(b){g.requestFocus(true);}
+        else{g.requestFocus(false);}
+    }
 
 
 

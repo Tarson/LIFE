@@ -44,13 +44,13 @@ public class Tetramino_BattonHandler implements ActionListener {
                 Tetramino_segments.tetramino_segments.clear();
                 Glass.end_0f_game=false;
 
-
+                Tetramino_segments.score=0;
 
 
 
                 Glass stacan = new Glass();
 
-
+                Glass_GamePanel.g.reqFocus(true);
 
 
 

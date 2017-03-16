@@ -103,7 +103,7 @@ public class Button_Handler_Snake implements ActionListener {
             GamePanel_Snake.g.reqFocus(true);
 
 
-                        return;
+
 
         }
 

@@ -185,11 +185,7 @@ public class GamePanel_Snake extends  JFrame   {
 
 
 
-    static void setVis (Boolean b){
 
-        if(b){g.setVisible(true);}
-        else{g.setVisible(false);}
-    }
     static void reqFocus(Boolean b){
 
         if(b){g.requestFocus(true);}

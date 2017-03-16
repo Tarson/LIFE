@@ -209,13 +209,14 @@ public class Snake   {
 
                      Panel_save save = new Panel_save(name,Rabbits.Score, c);
 
-                 }
 
 
 
 
 
 
+
+               }
 
 
 
